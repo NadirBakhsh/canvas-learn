@@ -10,23 +10,49 @@
         padding: 0px;
         margin: 0px;
       }
+
+      .chess-board {
+        width: 500px;
+        height: 500px;
+        background-color: aqua;
+        margin: 20vh auto;
+      }
+
     </style>
   </head>
   <body>
-    <canvas></canvas>
+    <div id="chess-board" class="chess-board">
+        <canvas></canvas>
+    </div>
 
     <script>
+      const screen = document.getElementById('chess-board')
       const canvas = document.querySelector("canvas");
+      
 
       // canvas Area
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      canvas.width = screen.clientWidth;
+      canvas.height = screen.clientHeight;
 
       // canvas context instance
       const ctx = canvas.getContext("2d");
 
       //ctx.fillRect(x,y, width, height )
-      ctx.fillRect(10, 10, 100, 100);
+   
+
+
+      for (let index = 0; index < 64 ; index++) {
+        ctx.fillStyle = index % 2 == 0 ? '#000' : 'gray';
+        ctx.fillRect(62.5 * index, 0, 62.5, 62.5); 
+      }
+
+      // create line
+    //   ctx.beginPath()
+    //   ctx.moveTo(200, 400)
+    //   ctx.lineTo(200, 200)
+    //   ctx.strokeStyle = '#000'
+    //   ctx.stroke()
+
 
     </script>
   </body>
