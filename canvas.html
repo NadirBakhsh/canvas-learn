@@ -29,7 +29,6 @@
       const screen = document.getElementById('chess-board')
       const canvas = document.querySelector("canvas");
       
-
       // canvas Area
       canvas.width = screen.clientWidth;
       canvas.height = screen.clientHeight;
@@ -39,8 +38,6 @@
 
       //ctx.fillRect(x,y, width, height )
    
-
-
       for (let index = 0; index < 64 ; index++) {
         ctx.fillStyle = index % 2 == 0 ? '#000' : 'gray';
         ctx.fillRect(62.5 * index, 0, 62.5, 62.5); 
